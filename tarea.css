@@ -1,0 +1,29 @@
+body {
+      background-color: #ece6f6;
+    }
+
+    .card {
+      background-color: #dcdaf7;
+      border-radius: 15px;
+    }
+
+    .priority-label {
+      margin-left: 5px;
+    }
+
+    .circle {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .circle.red { background-color: red; }
+    .circle.orange { background-color: orange; }
+    .circle.green { background-color: green; }
+
+    .form-check-input {
+      margin-left: 0.5rem;
+    }
+  

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tareas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="tarea.css">
+</head>
+<body>
+  <div class="container py-5">
+    <div class="card mx-auto p-4" style="max-width: 400px;">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0">Crear una nueva tarea</h5>
+        <button type="button" class="btn-close"></button>
+      </div>
+
+      <input type="text" class="form-control mb-3" placeholder="Ingrese título de la tarea">
+
+      <div class="mb-3">
+        <label class="form-label mb-1">Prioridad (Opcional)</label>
+        <div class="d-flex">
+          <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" id="alta">
+            <label class="form-check-label" for="alta">
+              <span class="circle red"></span>Alta
+            </label>
+          </div>
+          <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" id="media">
+            <label class="form-check-label" for="media">
+              <span class="circle orange"></span>Media
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="baja">
+            <label class="form-check-label" for="baja">
+              <span class="circle green"></span>Baja
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese descripción..."></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Fecha de notificación</label>
+        <div class="d-flex">
+          <input type="date" class="form-control me-2">
+          <input type="time" class="form-control">
+        </div>
+        <div class="form-check mt-2">
+          <input class="form-check-input" type="checkbox" id="noNotificar">
+          <label class="form-check-label" for="noNotificar">
+            No notificar
+          </label>
+        </div>
+      </div>
+
+      <button class="btn btn-primary w-100">Confirmar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

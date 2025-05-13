@@ -1,0 +1,83 @@
+    body {
+      background-color: #f3eefe;
+      font-family: sans-serif;
+    }
+
+    .main-container {
+      background-color: #e6e0f8;
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 420px;
+      margin: 40px auto;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .progress-circle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: white;
+      border: 3px solid #5c2bc8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #5c2bc8;
+      font-size: 13px;
+    }
+
+    .new-task-btn {
+      background-color: #d3d1f4;
+      border-radius: 20px;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      border: none;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .task-item {
+      background-color: #dcdaf7;
+      border-radius: 20px;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .circle {
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .red { background-color: red; }
+    .orange { background-color: orange; }
+    .green { background-color: green; }
+
+    .custom-check {
+      width: 18px;
+      height: 18px;
+    }
+
+    hr {
+      border-top: 2px solid #bbb;
+    }
