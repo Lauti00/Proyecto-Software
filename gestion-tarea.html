@@ -5,63 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lista de Tareas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="gestion-tarea.css">
 </head>
 <body>
-  <div class="container py-5" style="max-width: 420px;">
+   <div class="container py-5" style="max-width: 420px;">
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <div class="main-container">
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="main-container">
 
-      <!-- Header -->
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h5 class="mb-0">Tareas</h5>
-        <div class="progress-circle">5/10</div>
-        <button class="btn btn-link p-0">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Encabezado con botón desplegable y barra de progreso -->
+    <div class="d-flex justify-content-between align-items-center mb-3 w-100">
+      <!-- Botón dropdown con título y barra de progreso -->
+      <div class="d-flex w-100 justify-content-between align-items-center">
+        <div class="dropdown w-100">
+          <button class="btn btn-light dropdown-toggle d-flex align-items-center w-100" type="button" id="dropdownTareas"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-list me-2"></i> <span>Tareas</span>
+            <!-- Aquí va la imagen de progreso -->
+            <img src="circular-indeterminate progress indicator (1).png" alt="Progreso de tareas" style="max-height: 20px; margin-left: auto;"/>
+          </button>
+
+          <!-- Menú desplegable con acordeón -->
+          <div class="dropdown-menu w-100 p-2 shadow-sm" aria-labelledby="dropdownTareas">
+            <div class="accordion" id="menuOpciones">
+
+              <!-- Opciones de Proyecto -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="proyectoHeading">
+                  <button class="accordion-button collapsed p-2" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#proyectoOpciones" aria-expanded="false" aria-controls="proyectoOpciones">
+                    Opciones de Proyecto
+                  </button>
+                </h2>
+                <div id="proyectoOpciones" class="accordion-collapse collapse" aria-labelledby="proyectoHeading" data-bs-parent="#menuOpciones">
+                  <div class="accordion-body py-1 px-3">
+                    <ul class="list-unstyled mb-0">
+                      <li><button class="btn btn-link p-0">➕ Crear nuevo proyecto</button></li>
+                      <li><button class="btn btn-link p-0">✏️ Editar proyecto</button></li>
+                      <li><button class="btn btn-link p-0 text-danger">🗑️ Eliminar proyecto</button></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Opciones de Categoría -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="categoriaHeading">
+                  <button class="accordion-button collapsed p-2" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#categoriaOpciones" aria-expanded="false" aria-controls="categoriaOpciones">
+                    Opciones de Categoría
+                  </button>
+                </h2>
+                <div id="categoriaOpciones" class="accordion-collapse collapse" aria-labelledby="categoriaHeading" data-bs-parent="#menuOpciones">
+                  <div class="accordion-body py-1 px-3">
+                    <ul class="list-unstyled mb-0">
+                      <li><button class="btn btn-link p-0">➕ Crear nueva categoría</button></li>
+                      <li><button class="btn btn-link p-0">✏️ Editar categoría</button></li>
+                      <li><button class="btn btn-link p-0 text-danger">🗑️ Eliminar categoría</button></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+    <!-- Línea divisoria -->
+    <hr class="my-3">
 
-      <!-- Botón Crear nueva tarea -->
-      <!-- Botón Crear nueva tarea -->
-        <div class="header mb-3">
-            <span>Crear una nueva tarea</span>
-        <button 
+    <!-- Tareas con notificación -->
+    <div class="mb-4">
+      <h6 class="mb-2">Notificaciones de tareas pendientes</h6>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea urgente 1
+          <button class="btn btn-sm btn-link p-0" title="Recordatorio">
+            <i class="bi bi-bell-fill text-warning"></i>
+          </button>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Reunión de planificación
+          <button class="btn btn-sm btn-link p-0" title="Recordatorio">
+            <i class="bi bi-bell-fill text-warning"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Botón Crear nueva tarea -->
+    <div class="header mb-3">
+      <span>Crear una nueva tarea</span>
+      <button 
         class="btn btn-sm btn-outline-secondary rounded-circle p-0" 
         style="width: 25px; height: 25px;"
         onclick="window.location.href='tarea.html';">+</button>
-        </div>
-
-      <!-- Lista de tareas pendientes -->
-      <div id="tareas-pendientes">
-        <div class="task-item"><span>Tarea - 1</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 2</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 3</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 4</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 5</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 6</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 7</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 8</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 9</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-        <div class="task-item"><span>Tarea - 10</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
-      </div>
-
-      <!-- Tareas completas -->
-      <hr class="my-4">
-      <h6><strong>Tareas completas</strong></h6>
-
-      <div id="tareas-completas">
-        <div class="task-item"><span>Tarea - 11</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
-        <div class="task-item"><span>Tarea - 12</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
-        <div class="task-item"><span>Tarea - 13</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
-        <div class="task-item"><span>Tarea - 14</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
-        <div class="task-item"><span>Tarea - 15</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
-      </div>
     </div>
-    <!-- FIN CONTENEDOR -->
-    
-  </div>
 
+    <!-- Lista de tareas pendientes -->
+    <div id="tareas-pendientes">
+      <div class="task-item"><span>Tarea - 1</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 2</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 3</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 4</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 5</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 6</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 7</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 8</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 9</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+      <div class="task-item"><span>Tarea - 10</span><span><span class="circle green"></span><input type="checkbox" class="form-check-input custom-check"></span></div>
+    </div>
+
+    <!-- Tareas completas -->
+    <hr class="my-4">
+    <h6><strong>Tareas completas</strong></h6>
+
+    <div id="tareas-completas">
+      <div class="task-item"><span>Tarea - 11</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
+      <div class="task-item"><span>Tarea - 12</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
+      <div class="task-item"><span>Tarea - 13</span><span><span class="circle red"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
+      <div class="task-item"><span>Tarea - 14</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
+      <div class="task-item"><span>Tarea - 15</span><span><span class="circle orange"></span><input type="checkbox" class="form-check-input custom-check" checked></span></div>
+    </div>
+  </div>
+  <!-- FIN CONTENEDOR -->
+
+  </div>
+  
+   <!-- Agregar el siguiente script para evitar el cierre del dropdown -->
+  <script>
+    document.querySelector('.dropdown-menu').addEventListener('click', function (e) {
+      e.stopPropagation(); // Evita que el dropdown se cierre al hacer clic en los botones
+    });
+  </script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

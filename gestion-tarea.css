@@ -81,3 +81,7 @@
     hr {
       border-top: 2px solid #bbb;
     }
+    .bi-bell-fill {
+  font-size: 1.2rem;
+  color: #ffc107; /* amarillo Bootstrap */
+}

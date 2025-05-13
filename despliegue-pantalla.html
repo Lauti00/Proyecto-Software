@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestor de Tareas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="despliegue-pantalla.css">
+</head>
+<body>
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4>Tareas</h4>
+      <button class="btn btn-outline-secondary rounded-circle">🔁</button>
+    </div>
+
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Crear una nueva tarea">
+    </div>
+
+    <div class="task-card">
+      <h6>Tarea - 1</h6>
+      <textarea class="form-control mb-3" rows="3" placeholder="Descripción de la tarea..."></textarea>
+      
+      <label class="form-label">Reasignar Prioridad</label>
+      <div class="mb-2">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="priority" id="alta" />
+          <label class="form-check-label" for="alta">Alta <span class="priority-icon priority-high"></span></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="priority" id="media" />
+          <label class="form-check-label" for="media">Media <span class="priority-icon priority-medium"></span></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="priority" id="baja" />
+          <label class="form-check-label" for="baja">Baja <span class="priority-icon priority-low"></span></label>
+        </div>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Activar notificación</label>
+        <div class="d-flex align-items-center gap-2">
+          <input type="date" class="form-control w-auto">
+          <input type="time" class="form-control w-auto">
+        </div>
+      </div>
+
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" id="notificar" />
+        <label class="form-check-label" for="notificar">No notificar</label>
+      </div>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="categoria" />
+        <label class="form-check-label" for="categoria">Asignar categoría</label>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-danger">Eliminar</button>
+        <button class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+
+    <!-- Lista de tareas -->
+    <div class="mb-4">
+      <div class="list-group">
+        <!-- Tareas activas -->
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 2
+          <div><span class="priority-icon priority-high"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 3
+          <div><span class="priority-icon priority-medium"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 4
+          <div><span class="priority-icon priority-medium"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 5
+          <div><span class="priority-icon priority-medium"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 6
+          <div><span class="priority-icon priority-medium"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 7
+          <div><span class="priority-icon priority-low"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 8
+          <div><span class="priority-icon priority-low"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 9
+          <div><span class="priority-icon priority-low"></span><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          Tarea - 10
+          <div><input type="checkbox" class="form-check-input ms-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tareas completas -->
+    <h5 class="mt-4">Tareas completas</h5>
+    <div class="list-group">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        Tarea - 11
+        <div><span class="priority-icon priority-high"></span><input type="checkbox" class="form-check-input ms-2" checked></div>
+      </div>
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        Tarea - 12
+        <div><input type="checkbox
