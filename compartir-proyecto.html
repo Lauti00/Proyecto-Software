@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pantallas de Tareas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f4fc;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      background-color: #dcd9f1;
+      border: none;
+      border-radius: 1rem;
+    }
+    .circle {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    .red { background-color: red; }
+    .orange { background-color: orange; }
+    .green { background-color: green; }
+    .grey { background-color: grey; }
+    .btn-purple { background-color: #5e2ee1; color: white; }
+    .btn-purple:hover { background-color: #4a23b6; }
+    .tarea-item, .tarea-completa-item {
+      background-color: #e5ddf5;
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4" style="max-width: 400px;">
+
+    <!-- Pantalla de Compartir Proyecto -->
+    <div class="card p-3 mb-4">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <strong>Compartir "Proyecto - 1 "</strong>
+        </div>
+        <button class="btn-close"></button>
+      </div>
+      <input type="text" class="form-control my-3" placeholder="Añadir personas...">
+
+      <div>
+        <small class="text-muted">Personas con acceso</small>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <div><i class="bi bi-person-circle"></i> Persona 1</div>
+          <span>Propietario</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <div><i class="bi bi-person-circle"></i> Persona 2</div>
+          <select class="form-select form-select-sm w-auto">
+            <option>Editor</option>
+            <option>Lectura</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-3 d-flex justify-content-between">
+        <button class="btn btn-light">Copiar enlace</button>
+        <button class="btn btn-purple">Guardar</button>
+      </div>
+    </div>
+
+    <!-- Pantalla de Tareas -->
+    <h5>Tareas</h5>
+    <div class="card p-3 mb-3">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <strong>Crear una nueva tarea</strong>
+        <button class="btn-close"></button>
+      </div>
+      <strong>Planificar Sprint</strong>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="alta">
+        <label class="form-check-label" for="alta"><span class="circle red"></span>Alta</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="media">
+        <label class="form-check-label" for="media"><span class="circle orange"></span>Media</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="baja">
+        <label class="form-check-label" for="baja"><span class="circle green"></span>Baja</label>
+      </div>
+      <textarea class="form-control my-2" rows="2" placeholder="Planificar cada sprint y subirlo a Trello"></textarea>
+
+      <div class="d-flex mb-2">
+        <input type="date" class="form-control me-1">
+        <input type="time" class="form-control">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="noNotificar">
+        <label class="form-check-label" for="noNotificar">No notificar</label>
+      </div>
+
+      <button class="btn btn-purple mt-2 w-100">Guardar cambios</button>
+      <button class="btn btn-light mt-2 w-100">Cancelar</button>
+    </div>
+
+    <div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 1</span><span class="circle red"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 2</span><span class="circle red"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 3</span><span class="circle red"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 4</span><span class="circle"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 5</span><span class="circle orange"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 6</span><span class="circle"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 7</span><span class="circle green"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 8</span><span class="circle"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 9</span><span class="circle green"></span></div>
+      <div class="tarea-item d-flex justify-content-between"><span>Tarea - 10</span><span class="circle"></span></div>
+    </div>
+
+    <h6 class="mt-4">Tareas completas</h6>
+    <div class="tarea-completa-item d-flex justify-content-between"><span>Tarea - 11</span><span><input type="checkbox" checked disabled> <span class="circle"></span></span></div>
+    <div class="tarea-completa-item d-flex justify-content-between"><span>Tarea - 12</span><span><input type="checkbox" checked disabled> <span class="circle"></span></span></div>
+    <div class="tarea-completa-item d-flex justify-content-between"><span>Tarea - 13</span><span class="circle red"></span></div>
+    <div class="tarea-completa-item d-flex justify-content-between"><span>Tarea - 14</span><span class="circle orange"></span></div>
+    <div class="tarea-completa-item d-flex justify-content-between"><span>Tarea - 15</span><span class="circle orange"></span></div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
